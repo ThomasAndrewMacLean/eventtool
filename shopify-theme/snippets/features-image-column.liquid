@@ -1,0 +1,8 @@
+<div class="features_block">
+    <!-- <img alt="" class="feature_image" sizes="(max-width: 767px) 92vw, 44vw" src="images/img_hero.jpg" srcset="images/img_hero-p-1080.jpeg 1080w, images/img_hero-p-1600.jpeg 1600w, images/img_hero-p-2000.jpeg 2000w, images/img_hero.jpg 2560w"> -->
+    {% if image %}
+        <img alt="" class="feature_image" src={{image | img_url: 'master'}}>
+    {% else %}
+        <img alt="" class="feature_image" src={{"img_hero.jpg" | asset_img_url: 'master'}}>
+    {% endif %}
+</div>

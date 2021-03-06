@@ -1,0 +1,9 @@
+<div class="features_block">
+    <h2 class="text--h2">{{title}}<br></h2>
+    {% for block in blocks %}
+        <div class="feature_item"><img alt="" class="feature_item-icon" src={{block.settings.feature-image | img_url: 'medium'}}>
+            <div class="feature_item-descr">{{block.settings.feature-text}}</div>
+        </div>
+    {% endfor %}
+
+</div>

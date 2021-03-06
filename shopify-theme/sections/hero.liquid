@@ -1,0 +1,72 @@
+<div class="hero" id="hero" style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)), url( {{section.settings.background-image | img_url: 'master' }});">
+    <div class="container">
+        <div class="row row--fold">
+            <div class="col">
+                <h1 class="text--h1">{{section.settings.hero-title}}</h1>
+                <div class="text--body">{{section.settings.hero-description}}</div>
+                <div class="ctas">
+                    <div class="cta">
+                        <a class="btn w-button" href="{{section.settings.cta-link}}">{{section.settings.cta-text}}</a>
+                    </div>
+                    <div class="cta">
+                        <a class="btn btn--outline w-button" href="{{section.settings.cta2-link}}">{{section.settings.cta2-text}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+    <div class="scroll-nudge">
+        <div class="scroll-nudge_label">{{section.settings.discover-more}}</div>
+        <div class="scroll-nudge_line"></div>
+    </div>
+</div>
+{% schema %}
+
+{
+    "name": "hero",
+    "settings": [
+        {
+            "type": "text",
+            "id": "hero-title",
+            "label": "Title",
+            "default": "title"
+        }, {
+            "type": "text",
+            "id": "hero-description",
+            "label": "Description",
+            "default": "description"
+        }, {
+            "type": "text",
+            "id": "cta-text",
+            "label": "Cta button text",
+            "default": "cta"
+        }, {
+            "type": "text",
+            "id": "cta-link",
+            "label": "Cta button link",
+            "default": "collections/all"
+        }, {
+            "type": "text",
+            "id": "cta2-text",
+            "label": "Cta 2 button text",
+            "default": "cta2"
+        }, {
+            "type": "text",
+            "id": "cta2-link",
+            "label": "Cta2 button link",
+            "default": "collections/all"
+        }, {
+            "type": "text",
+            "id": "discover-more",
+            "label": "Discover More Nudge",
+            "default": "discover more"
+        }, {
+            "type": "image_picker",
+            "id": "background-image",
+            "label": "Background image"
+        }
+    ]
+}
+
+{% endschema %}

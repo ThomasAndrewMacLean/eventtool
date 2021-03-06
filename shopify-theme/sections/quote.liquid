@@ -1,0 +1,27 @@
+<section class="section section--clear-top">
+    <div class="container container--small">
+        <div class="text--body">{{section.settings.quote-text}}</div>
+        <div class="text--signature">{{section.settings.quote-name}}</div>
+    </div>
+</section>
+
+{% schema %}
+
+{
+    "name": "Quote",
+    "settings": [
+        {
+            "type": "text",
+            "id": "quote-text",
+            "label": "Quote Text",
+            "default": "Quote Text"
+        }, {
+            "type": "text",
+            "id": "quote-name",
+            "label": "Quote Name",
+            "default": "Quote Name"
+        }
+    ]
+}
+
+{% endschema %}

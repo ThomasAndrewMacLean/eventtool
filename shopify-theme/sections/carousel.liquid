@@ -1,0 +1,69 @@
+<section class="section section--color-brand">
+    <div class="container container--bleed-right">
+        <h2 class="text--h2">{{section.settings.title}}</h2>
+        <div class="collection-slider">
+            <div class="collection-slider_panes">
+                {% for block in section.blocks %}
+                    <div class="collection-slider_pane">
+                        <a class="collection-card w-inline-block" href="#">
+                            <img alt="" class="collection-card_thumb" loading="lazy" src={{ block.settings.carousel-image | img_url: 'x320' }}>
+
+                            <!-- <img alt="" class="collection-card_thumb" loading="lazy"
+                             sizes="(max-width: 479px) 83vw, (max-width: 767px) 81vw, (max-width: 991px) 80vw, 20vw" 
+                             src="images/img_hero.jpg"
+                             srcset="images/img_hero-p-1080.jpeg 1080w, images/img_hero-p-1600.jpeg 1600w, images/img_hero-p-2000.jpeg 2000w, images/img_hero.jpg 2560w"
+                             > -->
+                            <h4 class="text--h4">{{ block.settings.carousel-text }}</h4>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="collection-slider_arrow-wrap">
+                <div class="collection-slider_arrow">→</div>
+            </div>
+        </div>
+        <div class="ctas ctas--no-bleed">
+            <div class="cta">
+                <a class="btn btn--outline w-button" href="#">{{section.settings.explore-more}}</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+
+{
+    "name": "Carousel",
+    "blocks": [
+        {
+            "type": "block",
+            "name": "Images",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "carousel-text",
+                    "label": "Carousel text"
+                }, {
+                    "type": "image_picker",
+                    "id": "carousel-image",
+                    "label": "Carousel Image"
+                }
+            ]
+        }
+    ],
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Title"
+        }, {
+            "type": "text",
+            "id": "explore-more",
+            "label": "Explore More Button",
+            "default": "Explore product range  →"
+        }
+    ]
+}
+
+{% endschema %}

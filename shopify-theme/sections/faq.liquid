@@ -1,0 +1,52 @@
+<section class="section">
+    <div class="container">
+        <h1 class="text--h2">{{section.settings.title}}</h1>
+        <div class="faqs">
+            {% for block in blocks %}
+                <div class="faq w-dropdown" data-delay="0" data-hover="">
+                    <div class="faq_toggle w-dropdown-toggle">
+                        <div class="faq_toggle-question">{{block.question}}</div>
+                        <div class="faq_toggle-icon w-icon-dropdown-toggle"></div>
+                    </div>
+                    <nav class="faq_dropdown w-dropdown-list">
+                        <div class="faq_dropdown-answer">{{block.answer}}</div>
+                    </nav>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "FAQ",
+    "blocks": [
+        {
+            "type": "block",
+            "name": "Faq's",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "question",
+                    "label": "Question"
+                },
+                {
+                    "type": "textarea",
+                    "id": "answer",
+                    "label": "Answer"
+                }
+            ]
+        }
+        ],
+
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default": "Frequently asked questions" 
+            }
+        ]
+}
+{% endschema %}

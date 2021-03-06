@@ -1,0 +1,11 @@
+<header class="header" id="header">
+    {% assign current_variant = product.selected_or_first_available_variant %}
+    {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
+    {% section 'product-detail' %}
+</header>
+<main class="main" id="main">
+    {% section 'products-overview' %}
+    {% section 'cta' %}
+    {% section 'faq' %}
+
+</main> 

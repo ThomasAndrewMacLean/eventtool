@@ -1,0 +1,69 @@
+<section class="section">
+    <div class="container">
+        <div class="features">
+            {% if section.settings.flip == true %}
+
+
+                {% assign image = section.settings.image %}
+                {% include "features-image-column.liquid"%}
+
+                {% assign blocks = section.blocks %}
+                {% assign title = section.settings.title %}
+                {% include "features-text-column.liquid"%}
+
+            {% else %}
+
+                {% assign blocks = section.blocks %}
+                {% assign title = section.settings.title %}
+                {% include "features-text-column.liquid"%}
+
+                {% assign image = section.settings.image %}
+                {% include "features-image-column.liquid"%}
+
+
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Features",
+    "max_blocks": 3,
+    "blocks":[
+    {
+        "type": "block",
+        "name": "Features",
+        "settings": [
+            {
+                "type": "text",
+                "id": "feature-text",
+                "label": "Feature text"
+            }, {
+                "type": "image_picker",
+                "id": "feature-image",
+                "label": "Feature Image"
+            }
+        ]
+    }
+    ],
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Title"
+        }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "checkbox",
+            "id": "flip",
+            "label": "Text right?",
+            "default": false
+        }
+        ]
+}
+{% endschema %}

@@ -1,0 +1,76 @@
+<section class="section section--color-shade">
+    <div class="container">
+        <div class="row row--reverse">
+            <div class="col">
+                <h2 class="text--h2">{{section.settings.title}}<br><span class="text--highlight"></span>
+                </h2>
+                <div class="ctas">
+                    <div class="cta">
+                        <a class="btn btn--dark w-button" href="#">{{section.settings.view-all}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="review-score">
+                    <h2 class="review-score_value left">{{section.settings.value1}}</h2>
+                    <div class="review-score_line white"></div>
+                    <h2 class="review-score_value">{{section.settings.value2}}</h2>
+                </div>
+                <div class="reviews-rating">
+                    <div class="rating-stars">
+                        <img alt="" class="rating-star" loading="lazy" src={{"rating_star-black.svg" | asset_url}}>
+                        <img alt="" class="rating-star" loading="lazy" src={{"rating_star-black.svg" | asset_url}}>
+                        <img alt="" class="rating-star" loading="lazy" src={{"rating_star-black.svg" | asset_url}}>
+                        <img alt="" class="rating-star" loading="lazy" src={{"rating_star-black.svg" | asset_url}}>
+                        <img alt="" class="rating-star" loading="lazy" src={{"rating_star-black--half.svg" | asset_url}}>
+
+                     <div class="reviews-ratings-count">{{section.settings.based-on}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+
+    "name": "Rating",
+    "settings": [
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Title"
+        
+    },
+    {
+        "type": "text",
+        "id": "view-all",
+        "label": "View All",
+        "default": "View all reviews"
+        
+    },
+    {
+        "type": "text",
+        "id": "value1",
+        "label": "Value",
+        "default": "4.5"
+        
+    },
+    {
+        "type": "text",
+        "id": "value2",
+        "label": "Out of",
+        "default": "5"
+        
+    },
+    {
+        "type": "text",
+        "id": "based-on",
+        "label": "Based on",
+        "default": "Based on"
+        
+    }
+    ]
+}
+{% endschema %}

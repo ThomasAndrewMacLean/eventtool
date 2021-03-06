@@ -1,0 +1,62 @@
+<section class="section">
+    <div class="container container--small container--center">
+        <h2 class="text--h2">{{section.settings.title}}</h2>
+        {% if section.settings.offer %}
+            <div class="text--body">{{section.settings.offer}}</div>
+        {% endif %}
+        <div class="form-block--newsletter w-form">
+            <form class="newsletter-form" data-name="form_newsletter" id="wf-form-form_newsletter" name="wf-form-form_newsletter"><input class="newsletter-form_field w-input" data-name="Email" id="email" maxlength="256" name="email" placeholder={{section.settings.placeholder}} required="" type="email"><input class="newsletter-form_btn w-button" data-wait="Please wait..." type="submit" value={{section.settings.subscribe}}></form>
+            <div class="form-block_success w-form-done">
+                <div>{{section.settings.thanks}}</div>
+            </div>
+            <div class="form-block_error w-form-fail">
+                <div>{{section.settings.error}}</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% schema %}
+{
+    "name": "Newsletter",
+    "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Title" 
+    },
+    {
+      "type": "text",
+      "id": "offer",
+      "label": "Offer",
+      "default": "Offer" 
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Placeholder",
+      "default": "Placeholder" 
+    },
+    {
+      "type": "text",
+      "id": "subscribe",
+      "label": "Subscribe",
+      "default": "Subscribe" 
+    },
+    {
+      "type": "text",
+      "id": "thanks",
+      "label": "Thanks message",
+      "default": "Thanks" 
+    },
+    {
+      "type": "text",
+      "id": "error",
+      "label": "Error message",
+      "default": "Error" 
+    }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,35 @@
+<header>
+
+    <h1>Hello world!</h1>
+
+
+</header>
+
+{% schema %}
+
+{
+    "name": "Header",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "title",
+            "default": "hello world"
+        }, {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "logo"
+        }, {
+            "type": "range",
+            "id": "logo_max_width",
+            "label": "max width logo",
+            "min": 50,
+            "max": 250,
+            "step": 5,
+            "unit": "px",
+            "default": 100
+        }
+    ]
+}
+
+{% endschema %}

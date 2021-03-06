@@ -1,0 +1,91 @@
+<section class="section section--sub">
+    <div class="container">
+      <div class="store">
+        <div class="store_filters">
+          <div class="store_header">
+            <div class="text--label">Filter products</div>
+          </div>
+          <div class="filters">
+            <div class="filter">
+              <div class="filter_header">
+                <div class="filter_header-title">Filter group</div><img src="images/filter__toggle-expand.svg" loading="lazy" alt="" class="filter_header-icon">
+              </div>
+              <div class="filter_main">
+                <div class="filter_item filter_item--selected">
+                  <div>Filter option</div>
+                  <div class="filter_item-toggle filter_item-toggle--selected"><img src="images/checkbox_tick.svg" loading="lazy" alt=""></div>
+                </div>
+                <div class="filter_item">
+                  <div>Filter option</div>
+                  <div class="filter_item-toggle"></div>
+                </div>
+                <div class="filter_item">
+                  <div>Filter option</div>
+                  <div class="filter_item-toggle"></div>
+                </div>
+              </div>
+            </div>
+            <div class="filter">
+              <div class="filter_header">
+                <div class="filter_header-title">Filter group</div><img src="images/filter__toggle-expand.svg" loading="lazy" alt="" class="filter_header-icon">
+              </div>
+            </div>
+            <div class="filter">
+              <div class="filter_header">
+                <div class="filter_header-title">Filter group</div><img src="images/filter__toggle-expand.svg" loading="lazy" alt="" class="filter_header-icon">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="store_products">
+          <div class="store_header">
+            <div class="text--label"><span id="productsCount">{{collection.products_count}}</span> products found</div>
+          </div>
+          <div class="products">
+            {% for product in collection.products %}
+            <div class="product">
+              <div class="product-card">
+                {% for tag in product.tags %}
+                 
+                  {% if tag contains "tag-" %}
+                    
+                    <div class="product-card_label">{{tag | slice: 4,tag.size }}</div>
+                  {% endif %}
+                {% endfor %}
+                <img src={{ product.featured_image.src }} loading="lazy"  alt="" class="product-card_thumb">
+                <div class="product-card_main">
+                  <h4 class="product-card_title">{{product.title}}</h4>
+                  {% assign product = product %}
+                  {% assign sale = section.settings.sale %}
+                  {% include 'price' %}
+                  
+                </div>
+                <div class="product-card_footer">
+                  <a href="{{ product.url }}" class="product-card_link">View product</a>
+                  <a href="#" class="product-card_btn w-button">Add to cart</a>
+                </div>
+              </div>
+            </div>
+              
+            {% endfor %}
+          </div>
+          <div class="pagination"></div>
+        </div>
+      </div>
+    </div>
+
+
+
+    {% schema %}
+    {
+      "name": "product overview",
+      "settings": [
+        {
+          "type": "text",
+          "id": "sale",
+          "label": "Sale label",
+          "default": "Sale"
+        }
+      ]
+    }
+    {% endschema %}

@@ -1,0 +1,11 @@
+<div class="product-card_price">
+    {% if product.compare_at_price %}
+
+        <div class="product-card_price-value on-sale">{{product.compare_at_price | money}}</div>
+    {% endif %}
+    <div class="product-card_price-sale">{{product.price | money}}
+        {% if product.compare_at_price %}
+            {{sale}}
+        {% endif %}
+    </div>
+</div>

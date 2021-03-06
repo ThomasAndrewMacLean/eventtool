@@ -1,0 +1,51 @@
+<section class="section section--cta-large" style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)), url( {{section.settings.background-image | img_url: 'master' }});">
+    <div class="container">
+        <div class="row row--reverse">
+            <div class="col">
+                <h1 class="text--h2">{{section.settings.title}}</h1>
+                <div class="text--body">{{section.settings.description}}</div>
+                <div class="ctas">
+                    <div class="cta">
+                        <a class="btn w-button" href="#">{{section.settings.cta}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "CTA",
+  "settings": [
+  {
+    "type": "text",
+    "id": "title",
+    "label": "Title",
+    "default": "Title"
+    
+  },
+  {
+    "type": "text",
+    "id": "description",
+    "label": "Description",
+    "default": "Description"
+    
+  },{
+    "type": "text",
+    "id": "cta",
+    "label": "Cta Text",
+    "default": "Cta"
+    
+  },
+  {
+    "type": "image_picker",
+    "id": "background-image",
+    "label": "Background image"
+  }
+  ]
+    
+}
+{% endschema %}
